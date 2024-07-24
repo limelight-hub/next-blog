@@ -1,3 +1,5 @@
+import { time } from "console";
+
 export const categories = [
     "react",
     "javascript",
@@ -12,12 +14,12 @@ export const popularPosts = [
         title: "Spaces vs. Tabs: The Indentation Debate Continues",
     },
     {
-        title: "Spaces vs. Tabs: The Indentation Debate Continues",
+        title: "Tech Salaries Are Soaring",
     },
     {
-        title: "Spaces vs. Tabs: The Indentation Debate Continues",
+        title: "The Art of Writing Clean Code",
     },
     {
         title: "The Power of Static Typing in Programming",
-    },
+    }
 ];

@@ -13,7 +13,7 @@ export default function Home() {
         <div>
           <LatestPosts />
         </div>
-        <div className="h-screen">  
+        <div className="h-screen sticky top-0">  
           <div>
             <h1 className="font-bold mb-4 text-center">TOP CATEGORIES</h1>
             <TopCategories />
