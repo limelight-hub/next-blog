@@ -2,6 +2,7 @@ import {
     Rss,
     Twitter,
     Github,
+    Flower,
     Bird,
     ArrowRight,
     Icon as LucidIcon,
@@ -16,6 +17,7 @@ export const Icons = {
     arrowRight: ArrowRight,
     twitter: Twitter,
     github: Github,
+    flower: Flower,
     gitHub: ({ ...props }: LucideProps) => (
         <svg
             aria-hidden="true"

@@ -63,9 +63,9 @@ export function MainNav({ className }: { className?: string }) {
             )}
         >
             <Link href={"/"}>
-                <div className="flex items-center justify-between w-16">
+                <div className="flex items-center justify-between ">
                     <Icons.logo className="h-5 w-5" />
-                    <p>Blog</p>
+                    <p className="ml-3">Scarlet's Blog</p>
                 </div>
             </Link>
 
