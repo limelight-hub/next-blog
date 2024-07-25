@@ -100,7 +100,7 @@ export default function Footer() {
                             Subscribe to our newsletter to stay up-to-date with the latest
                             news and updates.
                         </p>
-                        <form>
+                        <form className="">
                             <div className="flex space-x-2">
                                 <Input
                                     type="email"
