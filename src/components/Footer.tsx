@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 // import { createSubscriber } from "@/lib/actions";
 import { useFormState } from "react-dom";
 
-export default function Footer() {
+export default function Fouter() {
     const initialState = { message: "", errors: {} };
     // const [state, dispatch] = useFormState(createSubscriber, initialState);
     return (
