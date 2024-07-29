@@ -5,6 +5,15 @@ import Header from "@/components/Header";
 import { BreadcrumbWithCustomSeparator } from "@/components/BreadCrum";
 import { CustomMDX } from "@/components/mdx";
 
+export async function generateStaticParams() {
+    let posts = getBlogPosts();
+
+    return posts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
+
 export default function Page({ params }: { params: { category: string, slug: string } }) {
     let posts = getBlogPosts().find(post => post.metadata.category === params.category && post.slug === params.slug);
 
