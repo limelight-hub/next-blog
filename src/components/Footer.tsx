@@ -1,12 +1,12 @@
 "use client";
 
-import { POSTS } from "@/lib/constants";
+// import { POSTS } from "@/lib/constants";
 import { Icons } from "./icons";
-import Link from "next/link";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+// import Link from "next/link";
+// import { Input } from "./ui/input";
+// import { Button } from "./ui/button";
 // import { createSubscriber } from "@/lib/actions";
-import { useFormState } from "react-dom";
+// import { useFormState } from "react-dom";
 
 export default function Footer() {
     const initialState = { message: "", errors: {} };
