@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import Header from "@/components/Header";
 import { BreadcrumbWithCustomSeparator } from "@/components/BreadCrum";
 import { CustomMDX } from "@/components/mdx";
+import ReportViews from "@/components/ReportViews";
 
 export async function generateStaticParams() {
     let posts = getBlogPosts();
@@ -22,25 +23,29 @@ export default function Page({ params }: { params: { category: string, slug: str
     }
 
     return (
-        <Header >
-            <Container>
-                <BreadcrumbWithCustomSeparator category={params.category} slug={params.slug} />
-                <h1 className="title font-semibold text-xl tracking-wider mt-4 uppercase">
-                    {posts.metadata.title}
-                </h1>
-                <div>
-                    <p className="text-muted-foreground text-sm text-neutral-600 dark:text-neutral-400 mt-2">
-                        {formatDate(posts.metadata.publishedAt)}
-                    </p>
-                </div>
+        <>
+            <ReportViews slug={posts.slug} title={posts.metadata.title} category={posts.metadata.category} />
+            <Header >
+                <Container>
+                    <BreadcrumbWithCustomSeparator category={params.category} slug={params.slug} />
+                    <h1 className="title font-semibold text-xl tracking-wider mt-4 uppercase">
+                        {posts.metadata.title}
+                    </h1>
+                    <div>
+                        <p className="text-muted-foreground text-sm text-neutral-600 dark:text-neutral-400 mt-2">
+                            {formatDate(posts.metadata.publishedAt)}
+                        </p>
+                    </div>
 
-            </Container>
-            <Container>
-                <article className="prose">
-                    <CustomMDX source={posts.content}/>
-                </article>
+                </Container>
+                <Container>
+                    <article className="prose">
+                        <CustomMDX source={posts.content} />
+                    </article>
 
-            </Container>
-        </Header>
+                </Container>
+            </Header>
+
+        </>
     )
 }
