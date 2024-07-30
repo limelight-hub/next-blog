@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Scarlet's Blog",
-      url: "https://github.com",
+      url: "https://github.com/limelight-hub",
     },
   ],
   creator: "Scarlet's Blog",

@@ -25,7 +25,7 @@ export default function Footer() {
                         </p>
                         <div className="flex space-x-4">
                             <a
-                                href="https://twitter.com/w3tsadev"
+                                href="https://twitter.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Twitter"
@@ -33,7 +33,7 @@ export default function Footer() {
                                 <Icons.twitter className="h-6 w-6 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" />
                             </a>
                             <a
-                                href="https://github.com/w3tsadev"
+                                href="https://github.com/limelight-hub"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Github"

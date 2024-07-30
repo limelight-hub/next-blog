@@ -17,6 +17,6 @@ export const siteConfig: SiteConfig = {
     ogImage: "https://truclam-blog.vercel.app/og",
     links: {
         twitter: "https://twitter.com",
-        github: "https://github.com",
+        github: "https://github.com/limelight-hub",
     },
 };
