@@ -2,21 +2,19 @@ import { db } from "@/db";
 
 
 export async function GET() {
-    // try {
-    //     const data = await db.blog.findMany({
-    //         take: 10,
-    //         select: { slug: true, title: true, category: true },
-    //         orderBy: [{
-    //             view_count: "desc"
-    //         }]
-    //     })
-    // }
-    // catch (error) {
-    //     console.log("Database error...", error);
-    //     throw new Error("Failed to fetch regular posts");
-    // }
-    return new Response("Successfully GET wtv", { status: 200 })
-
+    try {
+        const data = await db.blog.findMany({
+            take: 10,
+            select: { slug: true, title: true, category: true },
+            orderBy: [{
+                view_count: "desc"
+            }]
+        })
+    }
+    catch (error) {
+        console.log("Database error...", error);
+        throw new Error("Failed to fetch regular posts");
+    }
 }
 
 export async function POST(request: Request) {
