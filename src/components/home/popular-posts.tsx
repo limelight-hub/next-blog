@@ -1,28 +1,28 @@
-import { Skeleton } from "@/components/ui/skeleton"
-import useSWR from "swr"
-import { fetcher } from "@/lib/utils"
-import { popularPosts } from "@/lib/placeholder-data"
-import {Icons} from "@/components/icons"
+"use client";
+
+// import { popularPosts } from "@/lib/placeholder-data";
+import { fetcher, fetchUrl } from "@/lib/utils";
+import { Icons } from "../icons";
+import Link from "next/link";
+import useSWR from "swr";
+import SkeletonCard from "@/components/skeleton/popular_posts_skeleton";
 
 export default function PopularPosts() {
+    const { data, error, isLoading } = useSWR(fetchUrl, fetcher);
+
+    if (error) return <div>Failed to load</div>;
+    if (isLoading) return <SkeletonCard />;
+
     return (
         <ul className="overflow-auto">
-            {
-                popularPosts.map((post) => (
-                    <li key={post.title} className="flex items-center justify-between p-4 border-b border-gray-200 group cursor-pointer hover:scale-101 transition-all ">
-                        <div className="flex items-center space-x-4  ">
-                            <Icons.arrowRight className="w-6 h-6 border-gray-200 group-hover:translate-x-2 transition-all" />
-                            <div>
-                                <h3>{post.title}</h3>
-                            </div>
-                        </div>
+            {data?.map((post: { category: string; slug: string; title: string }) => (
+                <Link href={`/blog/${post.category}/${post.slug}`} key={post.title}>
+                    <li className="flex items-center gap-2 group cursor-pointer py-2">
+                        <Icons.arrowRight className="h-6 w-6 group-hover:translate-x-1 transition-all" />
+                        <p>{post.title}</p>
                     </li>
-                ))
-            }
-
+                </Link>
+            ))}
         </ul>
-
-
-
-    )
+    );
 }
